@@ -9,3 +9,4 @@ s = float(input("Введите сторону квадрата:"))
 results = square(s)
 
 print(f"Площадь квадрата: {results}")
+
