@@ -36,13 +36,13 @@ def test_01_form():
         (By.ID, "zip-code")))
 
     classes = zip_code_field.get_attribute("class") or ""
-    assert "danger" in classes or "error" in classes, (
+    assert "alert-danger" in classes or "alert-success" in classes, (
         f"Zip code не подсвечен ошибкой. Классы: {classes}"
         )
 
     valid_fields = [
-            "first-name", "last-name", "address", "e-mail",
-            "phone", "city", "country", "job-position", "company"
+        "first-name", "last-name", "address", "e-mail",
+        "phone", "city", "country", "job-position", "company"
         ]
 
     for name in valid_fields:
