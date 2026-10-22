@@ -36,9 +36,8 @@ def test_01_form():
         (By.ID, "zip-code")))
 
     classes = zip_code_field.get_attribute("class") or ""
-    assert "alert-danger" in classes or "alert-success" in classes, (
+    assert "alert-danger" in classes or "alert-success" in classes, \
         f"Zip code не подсвечен ошибкой. Классы: {classes}"
-        )
 
     valid_fields = [
         "first-name", "last-name", "address", "e-mail",
@@ -46,11 +45,10 @@ def test_01_form():
         ]
 
     for name in valid_fields:
-
         field = wait.until(EC.presence_of_element_located((By.ID, name)))
         classes = field.get_attribute("class") or ""
 
-    assert "success" in classes or "valid" in classes, \
+        assert "success" in classes or "alert-success" in classes, \
         f"Поле '{name}' не подсвечено как валидное. Классы: '{classes}'"
 
     driver.quit()
